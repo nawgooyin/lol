@@ -19,4 +19,10 @@
         </mat-card>
     </div>
 
+    <div class="summoner-card-container" *ngIf="summonerInfo.length === 0">
+        <mat-card class="summoner-card">
+            <h1>No information found for this user</h1>
+        </mat-card>
+    </div>
+
 </div>
