@@ -1,0 +1,14 @@
+.header-container {
+    background-color: cornflowerblue;
+    height: 100px;
+}
+
+.header-title-container {
+    display: flex;
+    padding: 10px;
+    color: rgb(245, 245, 244);
+}
+
+.header-title {
+    padding-top: 20px;
+}
