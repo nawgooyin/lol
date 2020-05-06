@@ -14,10 +14,15 @@ export class HomeComponent implements OnInit {
     {title: 'Korea', value: 'KR'}
   ];
   summonerName: string = '';
+  selectedServer: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectServer(server: string) {
+    this.selectedServer = server;
   }
 
 }

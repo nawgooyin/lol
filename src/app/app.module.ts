@@ -7,11 +7,16 @@ import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './views/profile/profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './views/home/home/home.component';
+import { SummonerService } from './services/summoner/summoner.service';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,13 +32,18 @@ import { HomeComponent } from './views/home/home/home.component';
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    HttpClientModule,
+    MatCardModule
   ],
   entryComponents: [
     HeaderComponent,
     HomeComponent
   ],
-  providers: [],
+  providers: [
+    SummonerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

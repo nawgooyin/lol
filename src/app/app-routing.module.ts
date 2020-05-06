@@ -6,9 +6,10 @@ import { HomeComponent } from './views/home/home/home.component';
 
 
 const routes: Routes = [
-  { path: 'profile', component: ProfileComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'profile/:server/:summonerName', component: ProfileComponent },
   { path: 'header', component: HeaderComponent },
-  { path: 'home', component: HomeComponent }
  ];
 
 @NgModule({

@@ -1,1 +1,22 @@
-<p>profile works!</p>
+<div class="summoner-card-container">
+    <mat-card class="summoner-card">
+        <h1>{{summonerName}}</h1>
+    </mat-card>
+</div>
+
+<div class="profile-container">
+
+    <div class="summoner-card-container" *ngFor="let info of summonerInfo">
+        <mat-card class="summoner-card">
+            <h1>{{info.queueType==='RANKED_SOLO_5x5'?'Solo/Duo':'Flex 5v5'}}</h1>
+
+            <div class="summoner-info-container">
+                <span>{{info.tier}} {{info.rank}}</span>
+                <span>{{info.leaguePoints}} lp</span>
+                <span>{{info.wins}} wins</span>
+                <span>{{info.losses}} losses</span>
+            </div>
+        </mat-card>
+    </div>
+
+</div>
