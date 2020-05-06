@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   summonerInfo: Summoner[] = [];
   summonerName: string = '';
   server: string = '';
+  loading: boolean = false;
 
   constructor(private summonerService: SummonerService,
               private route: ActivatedRoute) { }
@@ -25,9 +26,15 @@ export class ProfileComponent implements OnInit {
   }
 
   getSummoner(summonerName: string, server: string ) {
+    this.loading = true;
+
     this.summonerService.getSummonerInfo(summonerName, server).subscribe((summoner) => {
       this.summonerInfo = summoner;
-    })
+
+      this.loading = false;
+    }, error =>{
+      this.loading = false;
+    });
   }
 
 }

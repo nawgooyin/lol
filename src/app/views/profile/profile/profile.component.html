@@ -4,6 +4,12 @@
     </mat-card>
 </div>
 
+<div *ngIf="loading" class="spinner-container">
+    <mat-card class="summoner-card">
+        <mat-spinner class="summoner-spinner"></mat-spinner>
+    </mat-card>
+</div>
+
 <div class="profile-container">
 
     <div class="summoner-card-container" *ngFor="let info of summonerInfo">
@@ -19,9 +25,9 @@
         </mat-card>
     </div>
 
-    <div class="summoner-card-container" *ngIf="summonerInfo.length === 0">
+    <div class="summoner-card-container" *ngIf="summonerInfo.length === 0 && !loading">
         <mat-card class="summoner-card">
-            <h1>No information found for this user</h1>
+            <h1>No information found for this summoner</h1>
         </mat-card>
     </div>
 

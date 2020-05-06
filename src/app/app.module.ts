@@ -17,6 +17,7 @@ import { HomeComponent } from './views/home/home/home.component';
 import { SummonerService } from './services/summoner/summoner.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSelectModule,
     FormsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     HeaderComponent,
