@@ -1,31 +1,4 @@
 .profile-container {
     background-color: gainsboro;
     height: 100%;
-    width: 100%;
-    display: inline-flex;
-}
-
-.summoner-card-container {
-    background-color: gainsboro;
-    width: 100%;
-    padding: 10px;
-}
-
-.summoner-info-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.summoner-card {
-    text-align: center;
-    width: 100%;
-}
-
-.spinner-container {
-    background-color: gainsboro;
-    padding: 10px;
-}
-
-.summoner-spinner {
-    margin: 0 auto;
 }

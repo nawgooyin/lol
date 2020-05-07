@@ -11,5 +11,6 @@ export interface Summoner {
     veteran: boolean,
     inactive: boolean,
     freshBlood: boolean,
-    hotStreak: boolean
+    hotStreak: boolean,
+    rankUrl: string
 }

@@ -1,0 +1,27 @@
+<mat-card class="summoner-card-container">
+
+    <div class="summoner-input-container">
+        <mat-form-field class="server-dropdown">
+            <mat-label>Servers</mat-label>
+            <mat-select [(ngModel)]="selectedServer" (change)="selectServer($event.value)">
+                <mat-option *ngFor="let server of servers" [value]="server.value">
+                {{server.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Enter Summoner Name</mat-label>
+            <input matInput placeholder="Doublelift" [(ngModel)]="summonerName">
+        </mat-form-field>
+    </div>
+
+    <div class="summoner-button-container">
+        <button 
+            class="btn btn-primary" 
+            [routerLink]="['/profile', selectedServer, summonerName]"
+            [disabled]="!summonerName && !selectedServer">
+            Find Summoner
+        </button>
+    </div>
+</mat-card>

@@ -18,13 +18,19 @@ import { SummonerService } from './services/summoner/summoner.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SummonerSearchComponent } from './components/summoner-search/summoner-search.component';
+import { SummonerRankComponent } from './components/summoner-rank/summoner-rank.component';
+import { LolLoaderComponent } from './components/lol-loader/lol-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    SummonerSearchComponent,
+    SummonerRankComponent,
+    LolLoaderComponent
   ],
   imports: [
     BrowserModule,

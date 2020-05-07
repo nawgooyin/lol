@@ -1,0 +1,34 @@
+<div class="summoner-card-container">
+    <mat-card class="summoner-card">
+        <h1>{{summonerName}}</h1>
+    </mat-card>
+</div>
+
+<lol-loader 
+    class="summoner-card" 
+    [loading]="loading">
+</lol-loader>
+
+<div class="summoner-info-container">
+
+    <div class="summoner-card-container" *ngFor="let info of summonerInfo">
+        <mat-card class="summoner-card">
+            <h1>{{info.queueType==='RANKED_SOLO_5x5'?'Solo/Duo':'Flex 5v5'}}</h1>
+            <img src="{{info.rankUrl}}" class="rank-image">
+
+            <div class="summoner-info">
+                <span>{{info.tier}} {{info.rank}}</span>
+                <span>{{info.leaguePoints}} lp</span>
+                <span>{{info.wins}} wins</span>
+                <span>{{info.losses}} losses</span>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="summoner-card-container" *ngIf="summonerInfo.length === 0 && !loading">
+        <mat-card class="summoner-card">
+            <h1>No information found for this summoner</h1>
+        </mat-card>
+    </div>
+
+</div>

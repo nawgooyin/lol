@@ -1,0 +1,30 @@
+.summoner-info-container {
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+}
+
+.summoner-card-container {
+    background-color: gainsboro;
+    width: 100%;
+    padding: 10px;
+}
+
+.summoner-info-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.summoner-info {
+    display: grid;
+    font-size: 20px;
+}
+
+.summoner-card {
+    text-align: center;
+    width: 100%;
+}
+
+.rank-image {
+    width: 25%;
+}

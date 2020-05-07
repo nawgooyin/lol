@@ -1,0 +1,23 @@
+.home-container {
+    background-color: gainsboro;
+    height: 100%;
+}
+
+.summoner-card-container {
+    display: inline-table;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+.summoner-input-container {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.summoner-button-container {
+    text-align: center;
+}
+
+.server-dropdown {
+    margin-right: 15px;
+}
