@@ -21,6 +21,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SummonerSearchComponent } from './components/summoner-search/summoner-search.component';
 import { SummonerRankComponent } from './components/summoner-rank/summoner-rank.component';
 import { LolLoaderComponent } from './components/lol-loader/lol-loader.component';
+import { MatchHistoryComponent } from './components/match-history/match-history.component';
+import { MatchHistoryService } from './services/matchHistory/matchHistory.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { LolLoaderComponent } from './components/lol-loader/lol-loader.component
     HomeComponent,
     SummonerSearchComponent,
     SummonerRankComponent,
-    LolLoaderComponent
+    LolLoaderComponent,
+    MatchHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +50,12 @@ import { LolLoaderComponent } from './components/lol-loader/lol-loader.component
   ],
   entryComponents: [
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    MatchHistoryComponent
   ],
   providers: [
-    SummonerService
+    SummonerService,
+    MatchHistoryService
   ],
   bootstrap: [AppComponent]
 })

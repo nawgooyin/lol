@@ -3,6 +3,9 @@ import { SummonerService } from 'src/app/services/summoner/summoner.service';
 import { Summoner } from 'src/app/entities/summoner';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { MatchHistoryService } from 'src/app/services/matchHistory/matchHistory.service';
+import { MatchHistory } from 'src/app/entities/matchHistory';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'profile',
@@ -12,24 +15,36 @@ import { Subscription } from 'rxjs';
 export class ProfileComponent implements OnInit {
 
   summonerInfo: Summoner[] = [];
+  matchHistory: MatchHistory = {} as MatchHistory;
+  champions: any;
   summonerName: string = '';
   server: string = '';
   loading: boolean = false;
+  beginIndex: number = 0;
+  endIndex: number = 10;
   summonerSub: Subscription;
+  matchHistorySub: Subscription;
 
   constructor(private summonerService: SummonerService,
+              private matchHistoryService: MatchHistoryService,
+              private http: HttpClient,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.summonerName = this.route.snapshot.paramMap.get('summonerName');
     this.server = this.route.snapshot.paramMap.get('server');
-
     this.getSummoner(this.summonerName, this.server);
+    this.getMatchHistory(this.summonerName, this.server, this.endIndex, this.beginIndex);
+
+    this.getChampions();
   }
 
   ngOnDestroy() {
     if(!!this.summonerSub) {
       this.summonerSub.unsubscribe();
+    }
+    if(!!this.matchHistorySub) {
+      this.matchHistorySub.unsubscribe();
     }
   }
 
@@ -48,6 +63,24 @@ export class ProfileComponent implements OnInit {
       this.loading = false;
     }, error =>{
       this.loading = false;
+    });
+  }
+
+  getMatchHistory(summonerName: string, server: string, endIndex: number, beginIndex: number) {
+    this.matchHistorySub = this.matchHistoryService.getMatchHistory(summonerName, server, endIndex, beginIndex).subscribe(match => {
+      this.matchHistory.matches = match.matches;
+
+      this.matchHistory.matches = this.matchHistory.matches.map(match => {
+        match.championPictureUrl = this.champions.filter(champion => match.champion === Number(champion.key))[0].icon;
+
+        return match;
+      });
+    });
+  }
+
+  getChampions() {
+    this.http.get("assets/champions.json").subscribe(data =>{
+      this.champions = data;
     });
   }
 
