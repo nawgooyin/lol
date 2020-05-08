@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './views/profile/profile/profile.component';
@@ -23,6 +23,8 @@ import { SummonerRankComponent } from './components/summoner-rank/summoner-rank.
 import { LolLoaderComponent } from './components/lol-loader/lol-loader.component';
 import { MatchHistoryComponent } from './components/match-history/match-history.component';
 import { MatchHistoryService } from './services/matchHistory/matchHistory.service';
+import { ChampionRotationComponent } from './components/champion-rotation/champion-rotation.component';
+import { ChampionRotationService } from './services/championRotation/champtionRotation.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MatchHistoryService } from './services/matchHistory/matchHistory.servic
     SummonerSearchComponent,
     SummonerRankComponent,
     LolLoaderComponent,
-    MatchHistoryComponent
+    MatchHistoryComponent,
+    ChampionRotationComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { MatchHistoryService } from './services/matchHistory/matchHistory.servic
     FormsModule,
     HttpClientModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgbModule
   ],
   entryComponents: [
     HeaderComponent,
@@ -55,7 +59,8 @@ import { MatchHistoryService } from './services/matchHistory/matchHistory.servic
   ],
   providers: [
     SummonerService,
-    MatchHistoryService
+    MatchHistoryService,
+    ChampionRotationService
   ],
   bootstrap: [AppComponent]
 })

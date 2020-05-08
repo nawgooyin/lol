@@ -1,12 +1,7 @@
-.home-container {
-    background-color: gainsboro;
-    height: 100%;
-}
-
 .summoner-card-container {
     display: inline-table;
     margin-left: 40%;
-    margin-top: 10%;
+    margin-top: 15px;
 }
 
 .summoner-input-container {

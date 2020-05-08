@@ -1,0 +1,15 @@
+<div class="champion-rotation-container">
+    <h1>Free Champions of the Week</h1>
+
+    <ngb-carousel class="carousel-container">
+        <ng-template ngbSlide *ngFor="let number of [0,1,2,3,4]">
+            <div *ngFor="let champ of championRotation.championInfo | slice:number*3:(number*3)+3" class="champion-card-container">
+                <mat-card class="champion-card">
+                    <img src="{{champ.icon}}"/>
+                    <h1>{{champ.id | titlecase}}</h1>
+                    <p>{{champ.description}}</p>
+                </mat-card>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>

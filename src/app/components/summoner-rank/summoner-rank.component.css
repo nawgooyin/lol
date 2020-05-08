@@ -4,7 +4,7 @@
 }
 
 .summoner-card-container {
-    background-color: gainsboro;
+    background-color: slategray;
     width: 100%;
     padding: 10px;
 }
@@ -22,6 +22,8 @@
 .summoner-card {
     text-align: center;
     width: 100%;
+    background-color: #292e38;
+    color: white
 }
 
 .rank-image {

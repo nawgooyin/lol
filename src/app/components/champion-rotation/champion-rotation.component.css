@@ -1,0 +1,26 @@
+.champion-rotation-container {
+    padding-top: 15px;
+    text-align: center;
+    color: white;
+    outline: none;
+}
+
+.champion-card {
+    width: 350px;
+    height: 330px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color: #292e38;
+    color: white;
+}
+
+.champion-card-container {
+    display: inline-flex;
+    padding-left: 20px;
+    outline: none;
+}
+
+.carousel-container {
+    outline: none;
+}

@@ -1,8 +1,12 @@
 .spinner-container {
-    background-color: gainsboro;
+    background-color: slategray;
     padding: 10px;
 }
 
 .summoner-spinner {
     margin: 0 auto;
+}
+
+.mat-spinner {
+    background-color: #292e38;
 }
