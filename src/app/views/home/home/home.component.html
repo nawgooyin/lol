@@ -1,6 +1,12 @@
 <div class="home-container">
 
-    <champion-rotation></champion-rotation>
-    <summoner-search></summoner-search>
+    <lol-loader [loading]="loading"></lol-loader>
+
+    <champion-rotation 
+        *ngIf="!loading && !!championRotation" 
+        [championRotation]="championRotation">
+    </champion-rotation>
+    
+    <summoner-search class="summoner-search-container"></summoner-search>
     
 </div>

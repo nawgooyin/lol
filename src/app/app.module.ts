@@ -25,6 +25,9 @@ import { MatchHistoryComponent } from './components/match-history/match-history.
 import { MatchHistoryService } from './services/matchHistory/matchHistory.service';
 import { ChampionRotationComponent } from './components/champion-rotation/champion-rotation.component';
 import { ChampionRotationService } from './services/championRotation/champtionRotation.service';
+import { LeaderBoardComponent } from './views/leader-board/leader-board.component';
+import { LeaderBoardService } from './services/leaderBoard/leaderBoard.service';
+import { ServerListComponent } from './components/server-list/server-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { ChampionRotationService } from './services/championRotation/champtionRo
     SummonerRankComponent,
     LolLoaderComponent,
     MatchHistoryComponent,
-    ChampionRotationComponent
+    ChampionRotationComponent,
+    LeaderBoardComponent,
+    ServerListComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { ChampionRotationService } from './services/championRotation/champtionRo
   providers: [
     SummonerService,
     MatchHistoryService,
-    ChampionRotationService
+    ChampionRotationService,
+    LeaderBoardService
   ],
   bootstrap: [AppComponent]
 })

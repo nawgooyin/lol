@@ -19,7 +19,8 @@ export class ProfileComponent implements OnInit {
   champions: any;
   summonerName: string = '';
   server: string = '';
-  loading: boolean = false;
+  summonerLoading: boolean = false;
+  matchHistoryLoading: boolean = false;
   beginIndex: number = 0;
   endIndex: number = 10;
   summonerSub: Subscription;
@@ -49,7 +50,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getSummoner(summonerName: string, server: string ) {
-    this.loading = true;
+    this.summonerLoading = true;
 
     this.summonerSub = this.summonerService.getSummonerInfo(summonerName, server).subscribe((summoner) => {
       this.summonerInfo = summoner;
@@ -60,13 +61,15 @@ export class ProfileComponent implements OnInit {
         return summoner;
       });
 
-      this.loading = false;
+      this.summonerLoading = false;
     }, error =>{
-      this.loading = false;
+      this.summonerLoading = false;
     });
   }
 
   getMatchHistory(summonerName: string, server: string, endIndex: number, beginIndex: number) {
+    this.matchHistoryLoading = true; 
+
     this.matchHistorySub = this.matchHistoryService.getMatchHistory(summonerName, server, endIndex, beginIndex).subscribe(match => {
       this.matchHistory.matches = match.matches;
 
@@ -75,6 +78,10 @@ export class ProfileComponent implements OnInit {
 
         return match;
       });
+
+      this.matchHistoryLoading = false; 
+    }, error =>{
+      this.matchHistoryLoading = false;
     });
   }
 

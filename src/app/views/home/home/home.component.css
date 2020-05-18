@@ -2,3 +2,8 @@
     background-color: slategray;
     height: 100%;
 }
+
+.summoner-search-container {
+    display: flex;
+    justify-content: center;
+}

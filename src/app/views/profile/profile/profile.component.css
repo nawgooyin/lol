@@ -1,4 +1,5 @@
 .profile-container {
     background-color: slategray;
+    display: block;
     height: fit-content;
 }

@@ -1,12 +1,17 @@
 <div class="profile-container">
 
+    <lol-loader 
+        [loading]="summonerLoading && matchHistoryLoading">
+    </lol-loader>
+
     <summoner-rank 
         [summonerInfo]="summonerInfo"
         [summonerName]="summonerName"
-        [loading]= "loading">
+        [loading]="summonerLoading">
     </summoner-rank>
 
     <match-history 
+        *ngIf="!matchHistoryLoading && !!matchHistory"
         [matchHistory]="matchHistory">
     </match-history>
 

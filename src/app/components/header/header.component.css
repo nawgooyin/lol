@@ -1,6 +1,7 @@
 .header-container {
     background-color: cornflowerblue;
     height: 100px;
+    display: flex;
 }
 
 .header-title-container {
@@ -10,4 +11,15 @@
 
 .header-title {
     padding-top: 20px;
+}
+
+.header-options-container {
+    padding-left: 100px;
+    padding-top: 15px;
+    color:white;
+}
+
+.header-options {
+    color: white;
+    font-size: 20px;
 }

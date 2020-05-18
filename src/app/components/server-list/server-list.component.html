@@ -1,0 +1,8 @@
+<mat-form-field class="server-dropdown">
+    <mat-label>Servers</mat-label>
+    <mat-select (selectionChange)="selectServer($event.value)">
+        <mat-option *ngFor="let server of servers" [value]="server.value">
+            {{server.title}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
